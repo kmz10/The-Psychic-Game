@@ -50,20 +50,23 @@
 		 	var options = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z",];
 		 	
 
-			if (options.indexOf(userGuess) > -1) {
+			if (options.indexOf(userGuess) === -1) {
+				alert("guess only letters")
 
-				if (userGuess === computerGuess) {
+			}
+
+				else if (userGuess === computerGuess) {
 					wins++;
 					numGuesses = 9;
 					guessChoices = [];
 				}
 
-				if (userGuess != computerGuess) {
+				else if (userGuess !== computerGuess && guessChoices.indexOf(userGuess) === -1) {
 					numGuesses --;
 					guessChoices.push(userGuess);
 				}
 
-				if (numGuesses === 0) {
+				else if (numGuesses === 0) {
 
 				numGuesses = 9;
 				losses ++;
@@ -83,7 +86,7 @@
 			document.querySelector("#game").innerHTML = html;
 
 			
-			}
+			
 		};
 
 	</script>
