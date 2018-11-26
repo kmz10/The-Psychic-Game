@@ -2,18 +2,29 @@
 <html lang="en-us">
 <head>
 	<meta charset="utf-8">
-    <title>Guess the Letter????????</title>
+	<title>RIDDLE ME THIS</title>
+	
      <style>
-     
-    body{
-       
-   background-image:url("hw.gif");
- 
 
+		 body{
+			 background-image:url("./assets/rid2.jpg");
+			 background-size: cover;
+			 
+		 }
 
-    }
-     
-     
+	
+		 #header{
+		     text-align: center;
+			 color:whitesmoke;
+			
+			}
+		 #game{
+			color: white;
+    margin: auto;
+    width: 50%;
+    display: block;
+    margin-top: 10%;
+		 }
      </style>
     
 
@@ -23,14 +34,21 @@
 </head>
 <body>
 
+	
+	<!-- <div id="header"><h1> Guess the Letter </h1>
+	<h3>Go Ahead and Try Your Best! Start Guessing!!!!</h3></div> -->
+
+
 	<div id="game">
-		<h1> Guess the Letter </h1>
-		<strong><p>Go Ahead and Try Your Best! Start Guessing!!!!</p></strong>
+		<h1>RIDDLE ME THIS </h1>
+		<strong><h3>Welcome to my riddle!<br> What letter am I thinking of ???<br> Start guessing!!!!</h3></strong>
 		<strong><p>Wins:</p></strong>
 		<strong><p>Losses:</p></strong>
 		<strong><p>Guesses Left:</p></strong>
-		<strong><p>Your Guesses so far:</p></strong>
+		<strong><p>Your guesses so far:</p></strong>
 	</div>
+
+
 
 	<script type="text/javascript">
 		
@@ -42,13 +60,8 @@
 		 var guessChoices = [];
 		 var computerGuess = computerChoices[Math.floor(Math.random() * computerChoices.length)];
 		 document.onkeyup = function(event) {
-			 
-
-		 	var userGuess = event.key.toLowerCase();
-
-		 	
-
-		 	var options = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z",];
+		 var userGuess = event.key.toLowerCase();
+		 var options = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z",];
 		 	
 
 			if (options.indexOf(userGuess) === -1) {
@@ -78,12 +91,12 @@
 				 
 
 			var html = 
-			"<h1>Guess the Letter</h1>" +
-			"<p>Go Ahead and Try Your Best! Start Guessing!!!</p>" +
-			"<p>Wins: " + wins + "</p>" +
+			"<h1>RIDDLE ME THIS</h1>" +
+			"<h3>Welcome to my riddle!<br> What letter am I thinking of ???<br> Start guessing!!!!</h3>" +
+			"<h2>Wins: " + wins + "<h2>" +
 			"<p>Losses: " + losses + "</p>" +
 			"<p>Guesses Left: " + numGuesses + "</p>" +
-			"<p>Your Guesses so far: " + guessChoices.join(", ") + "</p>";
+			"<p>Your guesses so far: " + guessChoices.join(", ") + "</p>";
 
 			document.querySelector("#game").innerHTML = html;
 
